@@ -36,3 +36,7 @@ fs.readFile(GITIGNORE, function (err, data) {
     fs.appendFile(GITIGNORE, ignoreFiles, 'utf8');
   }
 });
+
+exec('commitizen init cz-conventional-changelog --save-dev --save-exact').on('exit', (e) => {
+  console.log('>> ✔ Init conventional-changelog, your package.json may have been modified');
+});
